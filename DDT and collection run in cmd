@@ -1,0 +1,29 @@
+>>API: http://dummy.restapiexample.com/api/v1/create 
+
+-------------------------------------------------------------------------------------------------------------
+>>Insert one user
+{
+"name":"Jatin",
+"salary":"30000",
+"age":"28"
+}
+
+-------------------------------------------------------------------------------------------------------------
+>>Test: (Check for single user)
+tests["Check status code"]=responseCode.code==200;
+tests["Check status coin the response"]=responseBody.has("success");
+
+var response=JSON.parse(responseBody);
+tests["check status in the exact position"]=response.status=="success"
+
+pm.test("check Content-TYpe header", function()
+{
+    pm.response.to.be.header("Content-Type","application/json");
+});
+-------------------------------------------------------------------------------------------------------------
+
+
+Collection Run in CMD
+https://prnt.sc/4X2Q1Y7KidrI
+https://prnt.sc/LUcCtV2YMNEF
+-------------------------------------------------------------------------------------------------------------
